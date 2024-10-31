@@ -1,0 +1,47 @@
+<mvc:View controllerName="requestmanagement.controller.Request"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:ux="sap.uxap"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+    <Page id="requestDetailPage" showHeader="false" floatingFooter="true" title="{bp} | {request_description}" showNavButton="false" navButtonPress="onNavBack">
+        <ux:ObjectPageLayout id="ObjectPageLayout" showTitleInHeaderContent="false" alwaysShowContentHeader="false" preserveHeaderStateOnScroll="false" headerContentPinnable="false" isChildPage="false" upperCaseAnchorBar="false" showAnchorBar="false" toggleHeaderOnTitleClick="false">
+            <!-- <ux:headerContent>
+                <FlexBox wrap="Wrap" fitContainer="true" alignItems="Center" justifyContent="SpaceBetween">
+                    <Title text="{bp} | {request_description}" wrapping="true" class="sapUiSmallMarginEnd"/>
+                </FlexBox>
+            </ux:headerContent> -->
+            <ux:sections>
+                <ux:ObjectPageSection>
+                    <ux:subSections>
+                        <ux:ObjectPageSubSection>
+                            <ux:blocks>
+                                <form:SimpleForm id="generalInfoForm" editable="false" layout="ColumnLayout" title="{i18n>generalInfo}" columnsM="2" columnsL="3" columnsXL="4">
+                                    <form:content>
+
+                                    </form:content>
+                                </form:SimpleForm>
+                            </ux:blocks>
+                        </ux:ObjectPageSubSection>
+                    </ux:subSections>
+                </ux:ObjectPageSection>
+
+                <ux:ObjectPageSection>
+                    <ux:subSections>
+                        <ux:ObjectPageSubSection>
+                            <ux:blocks>
+                                <form:SimpleForm id="documentationForm" maxContainerCols="1" layout="ResponsiveGridLayout" editable="false" title="{i18n>attachments}" columnsM="2" columnsL="3" columnsXL="4">
+                                    <form:content>
+
+                                    </form:content>
+                                </form:SimpleForm>
+                            </ux:blocks>
+                        </ux:ObjectPageSubSection>
+                    </ux:subSections>
+                </ux:ObjectPageSection>
+            </ux:sections>
+        </ux:ObjectPageLayout>
+    </Page>
+
+</mvc:View>

@@ -1,0 +1,2 @@
+sap.ui.define([],function(){"use strict";return{dateFormat:function(t){if(t){var t=t instanceof Date?t:new Date(t);var a=sap.ui.core.format.DateFormat.getDateInstance({pattern:"dd.MM.yyyy"});return a.format(t)}}}});
+//# sourceMappingURL=formatter.js.map

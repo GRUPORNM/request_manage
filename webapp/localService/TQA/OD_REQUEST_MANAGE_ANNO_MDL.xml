@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../../tqa/request_manage_srv/$metadata">
+        <edmx:Include Namespace="REQUEST_MANAGE_SRV" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.tqa.od_request_manage_anno_mdl.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="TQA.REQUEST_MANAGE_SRV.xTQAxAPPROVAL_STATUS_VHType/domname">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="TQA.REQUEST_MANAGE_SRV.xTQAxAPPROVAL_STATUS_VHType/ddlanguage">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="TQA.REQUEST_MANAGE_SRV.xTQAxAPPROVAL_STATUS_VHType/as4local">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="TQA.REQUEST_MANAGE_SRV.xTQAxAPPROVAL_STATUS_VHType/as4vers">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="TQA.REQUEST_MANAGE_SRV.xTQAxAPPROVAL_STATUS_VHType/domval_ld">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="TQA.REQUEST_MANAGE_SRV.xTQAxAPPROVAL_STATUS_VHType/domval_hd">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="TQA.REQUEST_MANAGE_SRV.xTQAxAPPROVAL_STATUS_VHType/domvalue_l">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="TQA.REQUEST_MANAGE_SRV.xTQAxREQUESTSType/request_status_item">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="TQA.REQUEST_MANAGE_SRV.xTQAxREQUESTSType/RequestStatusVH">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="TQA.REQUEST_MANAGE_SRV.xTQAxREQUESTSType">
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="request_id"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="request_description"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="object_type"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Criticality" Path="RequestStatusCriticality"/>
+                            <PropertyValue Property="CriticalityRepresentation" EnumMember="UI.CriticalityRepresentationType/WithoutIcon"/>
+                            <PropertyValue Property="Value" Path="request_status"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="created_on"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="created_by"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>request_description</PropertyPath>
+                        <PropertyPath>object_type</PropertyPath>
+                        <PropertyPath>created_on</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

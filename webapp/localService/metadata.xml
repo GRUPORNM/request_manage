@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="TQA.REQUEST_MANAGE_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="xTQAxAPPROVAL_STATUS_VHType" sap:label="Value Help for User Approval Status" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="domname"/>
+                    <PropertyRef Name="ddlanguage"/>
+                    <PropertyRef Name="as4local"/>
+                    <PropertyRef Name="valpos"/>
+                    <PropertyRef Name="as4vers"/>
+                </Key>
+                <Property Name="domname" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label="Domain name"/>
+                <Property Name="ddlanguage" Type="Edm.String" Nullable="false" MaxLength="2" sap:label="Lang." sap:quickinfo="Language Key"/>
+                <Property Name="as4local" Type="Edm.String" Nullable="false" MaxLength="1" sap:display-format="UpperCase" sap:label="Activation Status" sap:quickinfo="Activation State of Repository Object"/>
+                <Property Name="valpos" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Status Item" sap:quickinfo="Domain value key"/>
+                <Property Name="as4vers" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Version" sap:quickinfo="Version of the entry (not used)"/>
+                <Property Name="ddtext" Type="Edm.String" MaxLength="60" sap:label="Status Description" sap:quickinfo="Short Text for Fixed Values"/>
+                <Property Name="domval_ld" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Lower limit" sap:quickinfo="Language-specific values for domains, lower limit"/>
+                <Property Name="domval_hd" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Upper Limit" sap:quickinfo="Language-specific values for domains, upper limit"/>
+                <Property Name="domvalue_l" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="Lower Value" sap:quickinfo="Values for Domains: Single Value/Lower Limit"/>
+            </EntityType>
+            <EntityType Name="xTQAxREQUESTSType" sap:label="Data Definition for Requests" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="request_id"/>
+                </Key>
+                <Property Name="request_id" Type="Edm.String" Nullable="false" MaxLength="4" sap:label="Request ID" sap:quickinfo="Request Id"/>
+                <Property Name="request_description" Type="Edm.String" MaxLength="100" sap:label="Description"/>
+                <Property Name="request_type_desc" Type="Edm.String" MaxLength="50" sap:label="Type"/>
+                <Property Name="object_type" Type="Edm.String" MaxLength="50" sap:label="Object Category"/>
+                <Property Name="request_status_item" Type="Edm.String" MaxLength="4"/>
+                <Property Name="request_status" Type="Edm.String" MaxLength="50" sap:label="Status" sap:value-list="standard"/>
+                <Property Name="RequestStatusCriticality" Type="Edm.Byte"/>
+                <Property Name="created_on" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:filter-restriction="interval" sap:label="Created on" sap:quickinfo="Date on which the record was created"/>
+                <Property Name="created_by" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created by" sap:quickinfo="User Name"/>
+                <Property Name="changed_on" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Changed on" sap:quickinfo="Last Changed On"/>
+                <Property Name="changed_by" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Changed by" sap:quickinfo="User Name"/>
+                <NavigationProperty Name="toRequestStatusVH" Relationship="TQA.REQUEST_MANAGE_SRV.assoc_DC6A1EC48A4E8716FCFBFB388BB0573C" FromRole="FromRole_assoc_DC6A1EC48A4E8716FCFBFB388BB0573C" ToRole="ToRole_assoc_DC6A1EC48A4E8716FCFBFB388BB0573C"/>
+            </EntityType>
+            <Association Name="assoc_DC6A1EC48A4E8716FCFBFB388BB0573C" sap:content-version="1">
+                <End Type="TQA.REQUEST_MANAGE_SRV.xTQAxREQUESTSType" Multiplicity="1" Role="FromRole_assoc_DC6A1EC48A4E8716FCFBFB388BB0573C"/>
+                <End Type="TQA.REQUEST_MANAGE_SRV.xTQAxAPPROVAL_STATUS_VHType" Multiplicity="1" Role="ToRole_assoc_DC6A1EC48A4E8716FCFBFB388BB0573C"/>
+            </Association>
+            <EntityContainer Name="TQA_REQUEST_MANAGE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="xTQAxAPPROVAL_STATUS_VH" EntityType="TQA.REQUEST_MANAGE_SRV.xTQAxAPPROVAL_STATUS_VHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="xTQAxREQUESTS" EntityType="TQA.REQUEST_MANAGE_SRV.xTQAxREQUESTSType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <AssociationSet Name="assoc_DC6A1EC48A4E8716FCFBFB388BB0573C" Association="TQA.REQUEST_MANAGE_SRV.assoc_DC6A1EC48A4E8716FCFBFB388BB0573C" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="xTQAxREQUESTS" Role="FromRole_assoc_DC6A1EC48A4E8716FCFBFB388BB0573C"/>
+                    <End EntitySet="xTQAxAPPROVAL_STATUS_VH" Role="ToRole_assoc_DC6A1EC48A4E8716FCFBFB388BB0573C"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotations Target="TQA.REQUEST_MANAGE_SRV.xTQAxREQUESTSType/request_status" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value Help for User Approval Status"/>
+                        <PropertyValue Property="CollectionPath" String="xTQAxAPPROVAL_STATUS_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="request_status"/>
+                                    <PropertyValue Property="ValueListProperty" String="ddtext"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="valpos"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="TQA.REQUEST_MANAGE_SRV.TQA_REQUEST_MANAGE_SRV_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="TQA.REQUEST_MANAGE_SRV.TQA_REQUEST_MANAGE_SRV_Entities/xTQAxREQUESTS" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="created_on"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="http://erpdev.rnm.local:50000/sap/opu/odata/tqa/REQUEST_MANAGE_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://erpdev.rnm.local:50000/sap/opu/odata/tqa/REQUEST_MANAGE_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

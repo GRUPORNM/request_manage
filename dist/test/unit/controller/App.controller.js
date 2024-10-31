@@ -1,0 +1,2 @@
+sap.ui.define(["request_management/controller/App.controller"],function(t){"use strict";QUnit.module("App Controller");QUnit.test("I should test the App controller",function(e){var n=new t;n.onInit();e.ok(n)})});
+//# sourceMappingURL=App.controller.js.map
